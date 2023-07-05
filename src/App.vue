@@ -2,30 +2,36 @@
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 import LogoSVG from "./components/svg/LogoSVG.vue";
+import { useUserStore } from "@/stores/user";
+
+const user = useUserStore();
 </script>
 
 <template>
   <header class="lg:flex place-items-center max-h-screen pr-20 leading-8">
-    <LogoSVG alt="Vue logo" class="lg:m-0 lg:mr-8 block mx-auto mt-0" />
+    <template v-if="!user.isSignedIn">
+      <LogoSVG alt="Vue logo" class="lg:m-0 lg:mr-8 block mx-auto mt-0" />
 
-    <div class="lg:flex lg:place-items-start lg:flex-wrap">
-      <HelloWorld msg="You did it!" />
+      <div class="lg:flex lg:place-items-start lg:flex-wrap">
+        <HelloWorld msg="Welcome!" />
 
-      <nav
-        class="lg:text-left lg:-ml-4 lg:text-base lg:px-0 lg:py-4 lg:mt-4 w-full mt-8 text-xs text-center"
-      >
-        <RouterLink
-          class="first-of-type:border-0 inline-block px-4 py-0 border border-l border-gray-600"
-          to="/"
-          >Home</RouterLink
+        <nav
+          class="lg:text-left lg:-ml-4 lg:text-base lg:px-0 lg:py-4 lg:mt-4 w-full mt-8 text-xs text-center"
+          v-if="$route.name !== 'login'"
         >
-        <RouterLink
-          class="first-of-type:border-0 inline-block px-4 py-0 border border-l border-gray-600"
-          to="/about"
-          >About</RouterLink
-        >
-      </nav>
-    </div>
+          <RouterLink
+            class="first-of-type:border-0 inline-block px-4 py-0 border border-l border-gray-600"
+            to="/"
+            >Home</RouterLink
+          >
+          <RouterLink
+            class="first-of-type:border-0 inline-block px-4 py-0 border border-l border-gray-600"
+            to="/about"
+            >About</RouterLink
+          >
+        </nav>
+      </div>
+    </template>
   </header>
 
   <RouterView />
