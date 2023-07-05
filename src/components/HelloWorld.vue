@@ -9,13 +9,13 @@ defineProps<{
     {{ msg }}
   </h1>
   <h3 class="lg:text-left text-xl text-center">
-    You’ve successfully created a project with
+    You can now conveniently
     <a href="https://vitejs.dev/" class="" target="_blank" rel="noopener"
-      >Vite</a
+      >Vue</a
     >
     +
     <a href="https://vuejs.org/" class="" target="_blank" rel="noopener"
-      >Vue 3</a
-    >. What's next?
+      >Manage</a
+    > your budget.
   </h3>
 </template>
