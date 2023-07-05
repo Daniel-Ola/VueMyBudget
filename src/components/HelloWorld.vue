@@ -14,8 +14,9 @@ defineProps<{
       >Vue</a
     >
     +
-    <a href="https://vuejs.org/" class="" target="_blank" rel="noopener"
-      >Manage</a
-    > your budget.
+    <a href="https://vuejs.org/" class="" target="_blank" rel="noopener">
+      Manage
+    </a>
+    your budget.
   </h3>
 </template>
