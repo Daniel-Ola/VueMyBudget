@@ -18,7 +18,8 @@
 
   #app {
     @apply max-w-7xl p-8 mx-auto my-0 font-normal;
-    @apply xl:grid xl:grid-cols-2 xl:gap-x-8 xl:py-0 xl:px-8;
+    //@apply xl:grid xl:grid-cols-2 xl:gap-x-8 xl:py-0 xl:px-8;
+    @apply flex gap-x-5 h-screen
   }
 
   a {
